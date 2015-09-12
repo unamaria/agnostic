@@ -1,11 +1,19 @@
 <% provide(:title, @candidate.nickname) %>
 <div class="row">
   <aside class="col-md-4">
-    <section class="position_info">
+    <section class="candidate_info">
       <h1>
         <%= @candidate.nickname %>
       </h1>
-			<h2>Positions</h2>
+			<h2>Applications</h2>
+			<% if !@candidate.applications.blank? %>
+				<% @candidate.applications.each do |application| %>
+					<p><%= link_to application.position.title, application.position %></p>
+					<p><strong>Status: </strong><%= application.status %></p>
+				<% end %>
+			<% else %>
+				<p>This candidate has no applications.</p>
+			<% end %>
     </section>
   </aside>
 </div>

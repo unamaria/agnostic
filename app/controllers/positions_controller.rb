@@ -4,5 +4,6 @@ class PositionsController < ApplicationController
 	end
 
 	def show
+		@position = Position.find params[:id]
 	end
 end
