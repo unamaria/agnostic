@@ -1,7 +1,7 @@
 <li>
-  <%= link_to candidate.nickname, candidate %>
+  <%= link_to position.title, position %>
 	<% if current_user.admin? %>
-		| <%= link_to "delete", candidate, method: :delete,
+		| <%= link_to "delete", position, method: :delete,
 																	data: { confirm: "Are you sure?" } %>
 	<% end %>
 </li>

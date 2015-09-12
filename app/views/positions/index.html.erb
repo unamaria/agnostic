@@ -1,0 +1,10 @@
+<% provide(:title, 'All positions') %>
+<h1>All positions</h1>
+
+<%= will_paginate %>
+
+<ul class="positions">
+  <%= render @positions %>
+</ul>
+
+<%= will_paginate %>
