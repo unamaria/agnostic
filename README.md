@@ -1,3 +1,3 @@
 # Agnostic
 
-Evaluate candidates leaving inconscious bias out of the picture.
+Evaluate candidates leaving unconscious bias out of the picture.
