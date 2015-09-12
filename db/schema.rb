@@ -43,11 +43,6 @@ ActiveRecord::Schema.define(version: 20150912184451) do
     t.datetime "updated_at"
   end
 
-  create_table "rates", force: :cascade do |t|
-    t.integer "up"
-    t.integer "down"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
