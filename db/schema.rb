@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150912184451) do
+ActiveRecord::Schema.define(version: 20150912223136) do
 
   create_table "applications", force: :cascade do |t|
     t.string   "status"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150912184451) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "resume_pdf"
   end
 
   add_index "candidates", ["user_id"], name: "index_candidates_on_user_id"

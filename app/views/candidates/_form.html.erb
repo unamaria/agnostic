@@ -9,5 +9,8 @@
   <%= f.label :github_username %>
   <%= f.text_field :github_username, class: 'form-control' %>
 
+  <%= f.label :resume_pdf %>
+  <%= f.file_field :resume_pdf, class: 'form-control' %>
+
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
