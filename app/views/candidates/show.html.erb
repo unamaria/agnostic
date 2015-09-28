@@ -5,8 +5,13 @@
       <h1>
         <%= @candidate.nickname %>
       </h1>
+      <% if current_user.admin? %>
+				<%= link_to "update", edit_candidate_path(@candidate) %>
+				| <%= link_to "delete", @candidate, method: :delete,
+																	data: { confirm: "Are you sure?" } %>
+			<% end %>
 			<% if !@candidate.resume_pdf.blank? %>
-      	<p><%= link_to "Open resume", @candidate.resume_pdf.url %></p>
+      	<p><%= link_to "Open resume", @candidate.resume_pdf.url, target: "_blank" %></p>
       <% else %>
       	<p>No resume has been uploaded for this candidate yet.</p>
       <% end %>

@@ -24,6 +24,20 @@ class CandidatesController < ApplicationController
 		end
 	end
 
+	def edit
+		@candidate = Candidate.find(params[:id])
+	end
+
+	def update
+		@candidate = Candidate.find(params[:id])
+		if @candidate.update_attributes candidate_params
+			flash[:success] = "Candidate updated"
+			redirect_to @candidate
+		else
+			render 'edit'
+		end
+	end
+
 	private
 
 		def candidate_params

@@ -5,7 +5,6 @@ class Candidate < ActiveRecord::Base
 
   has_attached_file :resume_pdf
   validates_attachment :resume_pdf, :content_type => { :content_type => "application/pdf" }
-  validates :resume_pdf, presence: true
 
 	before_create :create_nickname
 
