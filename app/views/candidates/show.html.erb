@@ -10,10 +10,14 @@
 				| <%= link_to "delete", @candidate, method: :delete,
 																	data: { confirm: "Are you sure?" } %>
 			<% end %>
-			<% if !@candidate.resume_pdf.blank? %>
-      	<p><%= link_to "Open resume", @candidate.resume_pdf.url, target: "_blank" %></p>
+			<h2>Résumé</h2>
+			<% if current_user.admin? && !@candidate.resume_pdf.blank? %>
+	      <p><%= link_to "Open original PDF", @candidate.resume_pdf.url, target: "_blank" %></p>
+      <% end %>
+			<% if !@candidate.resume_raw.blank? %>
+				<%= @candidate.resume_raw %>				
       <% else %>
-      	<p>No resume has been uploaded for this candidate yet.</p>
+      	<p>No résumé available for this candidate yet.</p>
       <% end %>
 			<h2>Applications</h2>
 			<% if !@candidate.applications.blank? %>

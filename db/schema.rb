@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150913153500) do
+ActiveRecord::Schema.define(version: 20150928211301) do
 
   create_table "applications", force: :cascade do |t|
     t.string   "status"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20150913153500) do
     t.string   "resume_pdf_content_type"
     t.integer  "resume_pdf_file_size"
     t.datetime "resume_pdf_updated_at"
+    t.text     "resume_raw"
   end
 
   add_index "candidates", ["user_id"], name: "index_candidates_on_user_id"
