@@ -3,9 +3,9 @@ class Candidate < ActiveRecord::Base
 	has_many :applications
 	has_many :positions, through: :applications
 
-	attr_accessible :resume_pdf
-  has_attached_file :resume_pdf, styles: {thumbnail: "60x60#"}
-  validates_attachment_content_type :resume_pdf, content_type: { content_type: "application/pdf" }
+  has_attached_file :resume_pdf
+  validates_attachment :resume_pdf, :content_type => { :content_type => "application/pdf" }
+  validates :resume_pdf, presence: true
 
 	before_create :create_nickname
 

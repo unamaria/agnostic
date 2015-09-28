@@ -10,13 +10,14 @@ class CandidatesController < ApplicationController
 
 	def new
 		@candidate = Candidate.new
+		@positions = Position.all.map { |value| [ value, value.title ] }
 	end
 
 	def create
-		candidate = Candidate.new candidate_params
-		if candidate.save
+		@candidate = Candidate.new candidate_params
+		if @candidate.save
 			flash[:success] = "Candidate successfully created."
-			redirect_to candidate_path candidate
+			redirect_to candidate_path @candidate
 		else
 			flash.now[:danger] = "Candidate couldn't be saved"
 			render 'new'

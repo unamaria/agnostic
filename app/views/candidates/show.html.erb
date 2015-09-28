@@ -5,6 +5,11 @@
       <h1>
         <%= @candidate.nickname %>
       </h1>
+			<% if !@candidate.resume_pdf.blank? %>
+      	<p><%= link_to "Open resume", @candidate.resume_pdf.url %></p>
+      <% else %>
+      	<p>No resume has been uploaded for this candidate yet.</p>
+      <% end %>
 			<h2>Applications</h2>
 			<% if !@candidate.applications.blank? %>
 				<% @candidate.applications.each do |application| %>
