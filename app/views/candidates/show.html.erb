@@ -15,7 +15,7 @@
 	      <p><%= link_to "Open original PDF", @candidate.resume_pdf.url, target: "_blank" %></p>
       <% end %>
 			<% if !@candidate.resume_raw.blank? %>
-				<%= @candidate.resume_raw %>				
+				<div class="resume"><%= @candidate.resume_raw.html_safe %></div>				
       <% else %>
       	<p>No résumé available for this candidate yet.</p>
       <% end %>
